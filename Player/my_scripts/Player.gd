@@ -24,6 +24,7 @@ enum {
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback") # get the playback property (inspector)
+onready var swordHitbox = $HitboxPivot/SwordHitbox
 
 
 
@@ -36,6 +37,7 @@ onready var animationState = animationTree.get("parameters/playback") # get the 
 func _ready():
 	print("Ready!")
 	animationTree.active = true
+	swordHitbox.knockback_vector = roll_vector
 
 
 
@@ -68,6 +70,7 @@ func move_state(delta):
 	if input_vector != Vector2.ZERO: # when player move
 		
 		roll_vector = input_vector
+		swordHitbox.knockback_vector = input_vector
 		
 		# ANIMATIONS - get Animation Tree
 		animationTree.set("parameters/Idle/blend_position", input_vector)
