@@ -1,5 +1,3 @@
-# Task list
-
 ## Priority
 - nuovo personaggio giocabile: **Blue Witch**
 
