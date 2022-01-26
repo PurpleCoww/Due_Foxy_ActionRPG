@@ -12,4 +12,4 @@
   - animation: animare i cespugli quando il player ci cammina sopra
   - perspective: sistemare la prospettiva dei cespugli quando il player ci cammina sopra, bisogna fare come se il player ci entrasse dentro e non sopra (ex: pokèmon)
 - Enemies:
-  - Drop system: quando muore un nemico lascia per terra un oggetto
+  - drop system: quando muore un nemico lascia per terra un oggetto
