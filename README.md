@@ -1,7 +1,7 @@
-##LINKS:
+## LINKS:
   - [YouTube Tutor](https://www.youtube.com/watch?v=UfKMgHbaGow&list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a&index=4&ab_channel=HeartBeast)
 
-##Executive summary
+## Executive summary
   - game concept: 
   - genre: ActionRPG
   - target: 
@@ -9,7 +9,7 @@
   - project: **_Due_Foxy_ActionRPG_**
   - scope:
 
-##Gameplay 
+## Gameplay 
   - story:
   - objectives:
   - game progressions: 
@@ -17,16 +17,16 @@
   - locations:
   - GUI:
 
-##Mechanics
+## Mechanics
   - rules:
   - combat:
   - physics:
 
-##Game elements 
+## Game elements 
   - worldbuilding: cespugli, alberi, montagne, sabbia
   - level design:
 
-##Assets
+## Assets
   - music:
   - sound effects:
   - 2D models:
