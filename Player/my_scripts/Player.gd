@@ -9,7 +9,8 @@ export var FRICTION = 500
 
 var state = MOVE
 var velocity = Vector2.ZERO
-var roll_vector = Vector2.LEFT
+var roll_vector = Vector2.ZERO
+var stats = PlayerStats
 
 
 # set out states (variables that cannot change set to a specific value)
@@ -25,7 +26,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback") # get the playback property (inspector)
 onready var swordHitbox = $HitboxPivot/SwordHitbox
-
+onready var hurtbox = $Hurtbox
 
 
 #############
@@ -35,10 +36,9 @@ onready var swordHitbox = $HitboxPivot/SwordHitbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Ready!")
+	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector
-
 
 
 # This runs every single physics step
@@ -53,8 +53,6 @@ func _physics_process(delta):
 			attack_state(delta)
 		ROLL:
 			roll_state(delta)
-
-
 
 
 func move_state(delta):
@@ -99,19 +97,15 @@ func move_state(delta):
 		state = ROLL
 
 
-
 # MOVEMENT
 func move():
 	velocity = move_and_slide(velocity)
-
 
 
 # ATTACK
 func attack_state(delta):
 	velocity = Vector2.ZERO # fix - do not remember the velocity
 	animationState.travel("Attack")
-	
-	
 func attack_animation_finished():
 	state = MOVE
 
@@ -121,8 +115,12 @@ func roll_state(delta):
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")
 	move()
-	
-	
 func roll_animation_finished():
 	velocity = Vector2.ZERO # fix roll sliding at the end of animation
 	state = MOVE
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	hurtbox.start_invincibility(0.5)
+	hurtbox.create_hit_effect()
