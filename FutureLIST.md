@@ -1,0 +1,6 @@
+- nuovo personaggio giocabile: **Blue Witch**
+- abilità:
+- nuovi nemici:
+- nuove mappe:
+- sistema giorno/notte
+- storyline: dialoghi, 
