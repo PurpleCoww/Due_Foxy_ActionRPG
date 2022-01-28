@@ -592,6 +592,9 @@ position = Vector2( 112, 40 )
 [node name="Bat" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 296, 80 )
 
+[node name="AnimatedSprite" parent="YSort/Bat" index="0"]
+frame = 3
+
 [node name="CollisionShape2D" parent="YSort/Bat/Hitbox" index="0"]
 position = Vector2( 0, -16 )
 
@@ -600,6 +603,9 @@ max_health = 2
 
 [node name="Bat2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 144, 88 )
+
+[node name="AnimatedSprite" parent="YSort/Bat2" index="0"]
+frame = 3
 
 [node name="Stats" parent="YSort/Bat2" index="6"]
 max_health = 1
