@@ -1,18 +1,22 @@
 extends Node
 
+export(int) var max_health = 1 setget set_max_health
+var health = 1 setget set_health
 
-export(int) var max_health = 1
-onready var health = max_health setget set_health
-
-# When youre node talk to one up in the hierarchy use SIGNALS
 signal no_health
+signal health_changed(value)
+signal max_health_changed(value)
 
-#func _process():
-#	if health <= 0:
-#		emit_signal("no_health")
-
+func set_max_health(value):
+	max_health = value
+	self.health = min(health, max_health)
+	emit_signal("max_health_changed", max_health)
 
 func set_health(value):
 	health = value
+	emit_signal("health_changed", health)
 	if health <= 0:
 		emit_signal("no_health")
+
+func _ready():
+	self.health = max_health

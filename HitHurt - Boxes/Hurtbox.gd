@@ -1,11 +1,5 @@
 extends Area2D
 
-#const HitEffect = preload("res://Effects/myHitEffect.tscn")
-
-# Decido se far vedere l'animazione hit
-# Imposto default a true e poi lo levo dall'inspector
-export(bool) var show_hit = true
-
 var invincible = false setget set_invincible
 
 signal invincibility_started
@@ -35,9 +29,8 @@ func start_invincibility(duration):
 func _on_Timer_timeout():
 	self.invincible = false
 
-# Fix for player overlaping with bat
 func _on_Hurtbox_invincibility_started():
 	collisionShape.set_deferred("disabled", true)
-	
+
 func _on_Hurtbox_invincibility_ended():
 	collisionShape.disabled = false
