@@ -11,7 +11,8 @@
 
 ## Gameplay 
   - concepts:
-    - I personaggi giocabili sono chiamati "Puppies Heroes", vengono sbloccati con il proseguimento della storyline principale. Rappresentano animali: cane, gatto, volpe, leone, scimmia
+    - I personaggi giocabili sono chiamati "Puppies Heroes", vengono sbloccati con il proseguimento della storyline principale:
+     - Rappresentano animali: cane, gatto, volpe, leone, scimmia
   - story: 
   - objectives:
   - game progressions: 
