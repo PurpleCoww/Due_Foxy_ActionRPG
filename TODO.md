@@ -1,5 +1,6 @@
 ## Priority
-- nuovo personaggio giocabile: **Blue Witch**
+- nuovo personaggio giocabile: **Blue Witch** - IN PROGRESS
+- new input system: click per muoversi, click sui nemici per attaccarli (come su lol)
 
 
 ## Everything
